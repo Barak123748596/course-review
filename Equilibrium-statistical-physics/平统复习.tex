@@ -1,0 +1,232 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{CJKutf8}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{longtable}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{setspace}
+\usepackage{textcomp}
+\usepackage{mathrsfs}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{braket}
+
+\newcommand{\sj}{\quad\!\!\!\!\:}
+\newcommand{\alg}[1]{\begin{align*}{#1}\end{align*}}
+\newcommand{\myPartial}[3]{{\bigg(\frac{\partial {#1}}{\partial {#2}}\bigg)}_{#3}}
+
+
+\pagestyle{fancy}
+\setlength{\textwidth}{159.2mm}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\voffset}{-10mm}
+\setlength{\headwidth}{159.2mm}
+\setlength{\textheight}{235mm}
+\fancyhf{}
+\lhead{\begin{CJK*}{UTF8}{gkai}平衡态统计物理\ 复习\end{CJK*}}
+\rhead{\thepage}
+
+\begin{document}
+\begin{CJK*}{UTF8}{gbsn}
+
+\title{\textbf{平衡态统计物理\\复习}}
+\author{葛博文\;1500019707}
+\date{\number\year年\number\month月\number\day日}
+\maketitle
+
+\begin{spacing}{1.3}
+\setcounter{section}{0}
+\section{热力学定律}
+\begin{align}
+  \alpha &= \frac{1}{V}\myPartial{V}{T}{p}\\
+  \beta &= \frac{1}{p}\myPartial{p}{T}{V}\\
+  \kappa_T &= -\frac{1}{V}\myPartial{V}{p}{T}\\
+  S &= nC_p lnT - nRlnp +S_0 \Rightarrow \Delta S= C_p ln\frac{T_2}{T_1}\\
+  S &= nC_V lnT + nRlnV +S_0 \Rightarrow \Delta S= C_V ln\frac{T_2}{T_1}\\
+  p &= \frac{RT}{V_m-b}-\frac{a}{V_M^2}\\
+  dW &= \sigma dA
+\end{align}
+\indent 声速
+\begin{align}
+  a &= \sqrt{\frac{dp}{d\rho}}\\
+  a^2 &= \myPartial{p}{\rho}{S} = -v^2\myPartial{p}{v}{S}\\
+  &= \gamma pv
+\end{align}
+
+\section{自由能}
+\subsection{原型}
+\begin{align}
+  U &= TS - PV +\mu N\\
+  H &= U + PV\\
+  F &= U - TS\\
+  G &= U - TS + PV\\
+  \Omega &= U - TS - \mu N
+\end{align}
+
+\subsection{电}
+\begin{align}
+      \varepsilon (T) &= \frac{D}{E}\\
+      dW &= VEdD\\
+      p \rightarrow -E, V \rightarrow VD
+\end{align}
+
+\subsection{磁}
+\begin{align}
+  dW = \mu_0 \mathscr{H}d\mathscr{M}\\
+  \dj\bard\dBar\dbar W = \mu_0 \mathscr{H}d\mathscr{M}\\
+  p\rightarrow-\mu_0\mathscr{H}, V\rightarrow\mathscr{M}\\
+  m = V\mathscr{M}\\
+  \frac{C_{\mathscr{M}}{T}dT = \frac{C_V}{c}d\mathscr{M}
+\end{align}
+
+
+
+\subsection{微分形式}
+\begin{align}
+    dU &= TdS + \Sigma Y_i dy_i + \mu dN\\
+    dH &= TdS+Vdp+\mu dN\\
+    dF &= -SdT - PdV + \mu dN\\
+    dG &= -SdT +Vdp+\mu dN\\
+    d\Omega &= -SdT-PdV-Nd\mu\\
+    Nd\mu &= -SdT +Vdp
+\end{align}
+
+
+\section{麦克斯韦关系}
+\subsection{经典}
+\begin{align}
+  \bigg( \frac{\partial S}{\partial V}\bigg)_T = \bigg( \frac{\partial p}{\partial T}\bigg)_V,
+  \bigg( \frac{\partial T}{\partial N}\bigg)_T = -\bigg( \frac{\partial \mu}{\partial S}\bigg)_N,
+  \bigg( \frac{\partial p}{\partial N}\bigg)_{T,N} = -\bigg( \frac{\partial \mu}{\partial V}\bigg)_{T,V}
+\end{align}
+\subsection{扩展}
+\begin{align}
+    C_p - C_V &= T\bigg( \frac{\partial p}{\partial T}\bigg)\bigg( \frac{\partial V}{\partial T}\bigg)\\
+              &= \frac{VT}{\kappa_T}\alpha^2\\
+    C_V &= \myPartial{U}{T}{V}\\
+    C_p &= \myPartial{H}{T}{p}\\
+    \myPartial{U}{V}{T} &= T\myPartial{p}{T}{V}-p\\
+    \myPartial{H}{p}{T} &= V-T\myPartial{V}{T}{p}\\
+\end{align}
+\indent吉布斯-亥姆霍兹方程
+\begin{align}
+  U =F - T\myPartial{F}{T}{} = G-T\myPartial{G}{T}{} -p\myPartial{G}{p}{}\\
+  H = G-T\myPartial{G}{T}{}
+\end{align}
+
+
+\section{普朗克}
+\begin{align}
+  Q = \sigma T^4
+\end{align}
+
+\section{热力学平衡条件}
+\begin{align}
+    \delta^2 S = -\frac{C_V}{T^2}(\delta T)^2 + \frac{1}{T}\bigg( \frac{\partial p}{\partial V}\bigg)(\delta V)^2\\
+    \Delta S<0,\Delta U>0,\Delta H>0,\Delta F>0,\Delta G>0
+\end{align}
+
+\section{相平衡}
+\begin{align}
+  Clapeyron \,\,equation:\frac{dp}{dT} = \frac{L}{T(V_m^{\beta}-V_m^{\alpha})}
+\end{align}
+\indent斯特林公式：
+\begin{align}
+  lnN! = NlnN - N
+\end{align}
+\indent相平衡共存
+\begin{align}
+  $热平衡条件：$ T^\alpha = T^\beta = T\\
+  $力学平衡条件：$ p^\alpha = p^\beta = p\\
+  $相变平衡条件：$ \mu^\alpha(T,p) = \mu^\beta(T,p)
+\end{align}
+
+
+\section{系综}
+\subsection{欧拉定理}
+\indent 欧拉定理：
+\begin{align}
+  if: f(\lambda x_1,\ldots,\lambda x_k) &= \lambda^mf(x^1,\ldots,x_k)\\
+  then:\Sigma_i x_i\frac{\partial f}{\partial x_i} &= mf
+\end{align}
+\subsection{溶液蒸发点}
+\begin{align}
+  g' = g + RTln(1-x)
+\end{align}
+\subsection{熵}
+\begin{align}
+  S &= -k\Sigma_s \rho_s ln\rho_s,
+  \rho_s =
+    \begin{cases}
+    \frac{1}{\Omega}& \text{微正则}\\
+    \frac{1}{Z}e^{-\beta E_s}& \text{正则}\\
+    \frac{1}{\Xi}e^{-\alpha N-\beta E_s}\\
+    \end{cases}
+\end{align}
+
+\subsection{配分方程}
+\subsubsection{正则(T,V,N)}
+\begin{align}
+  Z &= \frac{1}{N!h^{3N}}\int s^{-\beta E}dq_1\ldots dq_{3N}dp_1\ldots dp_{3N}\\
+  \beta &= \frac{1}{kT}\\
+  \rho_s &= \frac{1}{Z}e^{-\beta E_s}\\
+  U &= -\frac{\partial}{\partial\beta}lnZ\\
+  Y &= -\frac{1}{\beta}\frac{\partial}{\partial y}lnZ\\
+  F &= -kTlnZ\\
+  S &= k(lnZ - \beta\frac{\partial}{\partial\beta}lnZ)\\
+  \mu &= -kT\frac{\partial}{\partial N}lnZ\\
+  \overline{(E-\bar{E})^2} &= -\frac{\partial E}{\partial\beta} = kT^2C_V
+\end{align}
+\subsubsection{微正则（E,V,N)}
+\begin{align}
+  \rho_s &= \frac{1}{\Omega}\\
+  \Omega &= \frac{1}{\prod_i N_i!h^{N_i r}}\int_{E\leq H(q,p)\leq E+\delta E} d\Omega\\
+  \alpha &= \myPartial{ln\Omega_r}{N_r}{} = -\frac{\mu}{kT}\\
+  \beta &= \myPartial{ln\Omega_r}{E_r}{}  = \frac{1}{kT}\\
+  S(N,E,V) &= kln\Omega (N,E,V)\\
+  dS&= \frac{1}{T}(pdV - \mu dN)\\
+  T &= \bigg(\frac{\partial E}{\partial S}\bigg)_{V,N}\\
+  p &= -\bigg(\frac{\partial E}{\partial V}\bigg)_{S,N}
+\end{align}
+\indent $p,\mu$都可以通过偏导求出。
+\subsection{巨正则（$\mu$,E,V）}
+\begin{align}
+  \Xi &= \Sigma_{N=0}^\infty \Sigma_s e^{-\alpha N -\beta E}\\
+      &= \Sigma_{N}\frac{e^{-\alpha N}}{N!h^{Nr}}\int e^{-\beta E(q,p)}d\Omega\\
+  \rho_{Ns} &= \frac{1}{\Xi}e^{-\alpha V-\beta E_s}\\
+  \bar{N} &= -\frac{\partial}{\partial \alpha}ln\Xi\\
+  U &= -\frac{\partial}{\partial \beta}ln\Xi\\
+  p &= \frac{1}{\beta}\frac{\partial}{\partial V}ln\Xi\\
+  Y &= -\frac{1}{\beta}\frac{\partial}{\partial y}ln\Xi\\
+  S &= k(ln\Xi - \alpha \frac{\partial}{\partial \alpha}ln\Xi - \beta\frac{\partial}{\partial \beta}ln\Xi)\\
+  \overline{(N-\bar{N})^2} &= kT\myPartial{\bar{N}}{\mu}{T,N}\\
+  &= \frac{kT}{V}\kappa_T
+\end{align}
+
+\section{涨落}
+\begin{align}
+  W \propto e^{-\frac{\Delta S\Delta T - \Delta p\Delta V}{2kT}}\\
+  \overline{\Delta T\cdot\Delta V} = \overline{\Delta T}\cdot\overline{\Delta V} = 0\\
+  \overline{(\Delta T)^2} = \frac{kT^2}{C_V}\\
+  \overline{(\Delta V)^2} = -kT\myPartial{V}{p}{T}
+\end{align}
+\indent 巨正则系综涨落
+\begin{align}
+    W \propto e^{-\frac{\Delta S\Delta T - \Delta p\Delta V +\Delta\mu\Delta N}{2kT}}
+\end{align}
+\indent 高斯分布
+\begin{align}
+  P(n) = \frac{1}{\sqrt{2\pi(\Delta n)^2}}e^{-\frac{(n-\bar{n})^2}{2\overline{(\Delta n)^2}}}
+\end{align}
+
+
+\section{蛋变鸡}
+\indent鸡作为一个生物体并没有处在平衡态，因此不好用平常的方法衡量其熵的大小。然而我们考虑鸡蛋的混乱程度，其显然比鸡的混乱程度更大。
+
+
+
+\end{spacing}
+\end{CJK*}
+\end{document}
